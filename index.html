@@ -373,7 +373,7 @@
                                         <h3 className="text-2xl font-black uppercase italic mb-6 text-slate-900">Scheda <span className="text-red-600">Tecnica</span></h3>
                                         <div className="bg-slate-900 text-white p-6 md:p-8 rounded-[2rem] shadow-xl w-full">
                                             <ul className="space-y-5 text-xs md:text-sm uppercase font-bold tracking-wider">
-                                                <li className="flex justify-between border-b border-white/10 pb-2">
+                                           <li className="flex justify-between border-b border-white/10 pb-2">
                                                     <span className="text-slate-400">Marca</span>
                                                     <span className="text-right ml-2">{selectedCar.marca}</span>
                                                 </li>
@@ -396,6 +396,18 @@
                                                 <li className="flex justify-between border-b border-white/10 pb-2">
                                                     <span className="text-slate-400">Cambio</span>
                                                     <span className="text-right ml-2">{selectedCar.cambio || "Manuale"}</span>
+                                                </li>
+                                                <li className="flex justify-between border-b border-white/10 pb-2">
+                                                    <span className="text-slate-400">Potenza</span>
+                                                    <span className="text-right ml-2">{selectedCar.potenza ? `${selectedCar.potenza} CV` : "N/D"}</span>
+                                                </li>
+                                                <li className="flex justify-between border-b border-white/10 pb-2">
+                                                    <span className="text-slate-400">Cilindrata</span>
+                                                    <span className="text-right ml-2">{selectedCar.cilindrata ? `${selectedCar.cilindrata} cc` : "N/D"}</span>
+                                                </li>
+                                                <li className="flex justify-between border-b border-white/10 pb-2">
+                                                    <span className="text-slate-400">Colore</span>
+                                                    <span className="text-right ml-2">{selectedCar.colore || "N/D"}</span>
                                                 </li>
                                             </ul>
                                         </div>
