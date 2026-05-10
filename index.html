@@ -61,6 +61,7 @@
         const CONFIG = {
             // Dati Generali
             nomeConcessionaria: "L&C Garage",
+            logo: "./Logo LC Garage.jpg", // Percorso dell'immagine logo caricata
             citta: "Turi",
             provinciaBreve: "BA",
             provinciaEstesa: "Città metropolitana di Bari",
@@ -187,10 +188,13 @@
                     <nav className="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50 px-6 py-4 shadow-sm w-full">
                         <div className="max-w-7xl mx-auto flex justify-between items-center">
                             <div className="flex items-center gap-2 cursor-pointer" onClick={() => { setCurrentPage('home'); setSelectedCar(null); setIsMobileMenuOpen(false); }}>
-                                <div className="bg-red-600 p-2 rounded-lg text-white">
-                                    <i data-lucide="car" className="w-6 h-6"></i>
-                                </div>
-                                <span className="font-extrabold uppercase italic tracking-tighter text-xl text-slate-900">{CONFIG.nomeConcessionaria}</span>
+                                {/* Qui è stato inserito il nuovo logo */}
+                                <img 
+                                    src={CONFIG.logo} 
+                                    alt={CONFIG.nomeConcessionaria} 
+                                    className="h-12 md:h-16 w-auto object-contain rounded-full shadow-md hover:scale-105 transition transform" 
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/200x80/dc2626/white?text=L%26C+Garage'; }} 
+                                />
                             </div>
                             
                             <div className="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
@@ -526,7 +530,13 @@
                     <footer className="bg-slate-950 text-white py-16 px-6 mt-auto">
                         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12 mb-8">
                             <div>
-                                <h4 className="font-black uppercase italic text-2xl mb-4">{CONFIG.nomeConcessionaria}</h4>
+                                {/* Qui è stato inserito il nuovo logo nel Footer */}
+                                <img 
+                                    src={CONFIG.logo} 
+                                    alt={CONFIG.nomeConcessionaria} 
+                                    className="h-20 md:h-24 w-auto object-contain rounded-full shadow-lg mb-6" 
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/200x80/dc2626/white?text=L%26C+Garage'; }} 
+                                />
                                 <p className="text-slate-400 text-sm leading-relaxed mb-6 italic">{CONFIG.descrizioneFooter}</p>
                                 <div className="flex gap-3">
                                     <a href={CONFIG.social.instagram} target="_blank" title="Instagram" className="social-link w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all hover:bg-white/10 hover:border-red-500/50">
